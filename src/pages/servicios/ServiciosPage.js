@@ -10,6 +10,8 @@ const ServiciosPage = () => {
         stateData: {'Nombre': '', 'Descripcion': '', 'Precio': ''},
         updateTitle: 'Actualizar Datos del Servicio:',
         showDataTitle: 'Servicios: ',
+        getUrl: 'http://localhost:8000/getData/Servicio/',
+        table: 'Servicio'
     }
 
     return(

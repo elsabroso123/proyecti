@@ -10,6 +10,8 @@ const ClientesPage = () => {
         stateData: {'Nombre': '', 'Apellido': '', 'Telefono': '', 'Correo': ''},
         updateTitle: 'Actualizar Datos del Cliente:',
         showDataTitle: 'Clientes: ',
+        getUrl: 'http://localhost:8000/getData/Cliente/',
+        table: 'Cliente'
     }
 
     return(

@@ -10,6 +10,8 @@ const MascotasPage = () => {
         stateData: {'Nombre': '', 'FechaNacimiento': '', 'Especie': '', 'Raza': '', 'Genero': '', 'ClienteId': ''},
         updateTitle: 'Actualizar Datos de la Mascota:',
         showDataTitle: 'Mascotas: ',
+        getUrl: 'http://localhost:8000/getData/Mascota/',
+        table: 'Mascota'
     }
 
     return(

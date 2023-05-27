@@ -10,6 +10,8 @@ const VeterinariosPage = () => {
         stateData: {'Nombre': '', 'Apellido': '', 'Telefono': '', 'Correo': '', 'Especialidad': ''},
         updateTitle: 'Actualizar Datos del Veterinario:',
         showDataTitle: 'Veterinarios: ',
+        getUrl: 'http://localhost:8000/getData/Veterinario/',
+        table: 'Veterinario'
     }
 
     return(

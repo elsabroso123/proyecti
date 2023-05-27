@@ -10,6 +10,8 @@ const CitasPage = () => {
         stateData: {'Fecha': '', 'Hora': '', 'MascotaId': '', 'VeterinarioId': '', 'ServicioId': ''},
         updateTitle: 'Actualizar Datos de la Cita:',
         showDataTitle: 'Citas: ',
+        getUrl: 'http://localhost:8000/getData/Cita/',
+        table: 'Cita'
     }
 
     return(
