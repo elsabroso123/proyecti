@@ -1,4 +1,5 @@
 const { Pool } = require("pg");
+// import Pool from 'pg'
 
 const countFields = (str) => {
   const numOfSpaces = str.split(" ").length - 1;

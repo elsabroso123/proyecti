@@ -9,10 +9,10 @@ export const Container = styled.div`
 `
 export const Li = styled.li`
   margin-bottom: 15px;
-  text-align: center;
   margin-left: -40px;
   padding: 10px;
   border-radius: 5px;
+  cursor: pointer;
 
   &:hover {
     background-color: #667a8a;
