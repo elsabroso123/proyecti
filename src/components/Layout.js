@@ -6,13 +6,17 @@ const Container = styled.div`
   display: flex;
 `
 
+const Section = styled.section`
+  margin: auto;
+`
+
 const Layout = () => {
   return(
     <Container>
       <SideBar />
-      <section>
+      <Section>
         <Outlet />
-      </section>
+      </Section>
     </Container>
   )
 }

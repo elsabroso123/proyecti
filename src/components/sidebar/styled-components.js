@@ -6,6 +6,7 @@ export const Container = styled.div`
   width: 10%;
   min-height: 91.4vh;
   padding: 40px;
+  position: fixed;
 `
 export const Li = styled.li`
   margin-bottom: 15px;

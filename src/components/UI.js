@@ -1,4 +1,8 @@
 import React, {useState, useEffect} from "react";
+import styled from "styled-components";
+
+const Container = styled.div`
+`
 
 const UI = (props) => {
 
@@ -31,11 +35,11 @@ const UI = (props) => {
             })
         })
         .then(response => response.json())
-        .then(data => {
+        .then(() => {
             setNewRegister(params.stateData)
             alert(`${params.table} registrado con exito, recarge la pagina para ver los cambios`)
         })
-        .catch(e => console.log('mamo esta wea'))
+        .catch(() => console.log('mamo esta wea'))
     }
 
     const PreUpdate = (index) => {
@@ -45,16 +49,22 @@ const UI = (props) => {
       };
 
     const Update = (data) => {
-        const preId = `${params.table.toLowerCase()}id`
+        const postData = Object.values(data)
 
-        fetch(`http://localhost:8000/updateData/${params.table}/${preId}`,{
+        const body = {
+            "table": params.table,
+            "fields": params.fields,
+            "values": postData
+        }
+
+        fetch(`http://localhost:8000/updateData/${params.table}/${postData[0]}/`,{
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({data})
+            body: JSON.stringify(body)
         })
-        .then(response => console.log(response))
+        .then(() => alert("Datos actualizados correctamente, refresque la página para ver cambios"))
     }
 
     const Delete = (index) => {
@@ -67,11 +77,11 @@ const UI = (props) => {
                 'Content-Type': 'application/json',
             },
         })
-        .then(response => alert(`${params.table} eliminada, recargue la pagina para ver resultados`))
+        .then(() => alert(`${params.table} eliminada, recargue la pagina para ver resultados`))
     }
  
     return(
-        <div>
+        <Container>
             <h3>{params.title}</h3>
             <div>
                 <h4>{params.createTitle}</h4>
@@ -121,7 +131,7 @@ const UI = (props) => {
                     </div>
                 }
             </div>
-        </div>
+        </Container>
     )
 }
 

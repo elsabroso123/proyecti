@@ -53,8 +53,29 @@ const deleteData = async (req, res) => {
   });
 }
 
+const updateData = async (req, res) => {
+  const { table, fields, values } = req.body;
+  let str = ""
+
+  for (let i = 1; i < values.length; i++) {
+    if (i === values.length - 1) {
+      str += `${fields[i - 1]}='${values[i]}'`
+    } else {
+      str += `${fields[i - 1]}='${values[i]}', `
+    }
+  }
+
+  const query = `UPDATE ${req.params.tableName} SET ${str} WHERE ${table}Id=${values[0]}`
+  await pool.query(query)
+
+  res.status(200).json({
+    message: "Datos actualizados"
+  })
+}
+
 module.exports = {
   getData,
   insertData,
   deleteData,
+  updateData,
 };
