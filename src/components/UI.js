@@ -45,8 +45,16 @@ const UI = (props) => {
       };
 
     const Update = (data) => {
-        //Aqui deberia ir la funcion de put 
-        console.log(data)
+        const preId = `${params.table.toLowerCase()}id`
+
+        fetch(`http://localhost:8000/updateData/${params.table}/${preId}`,{
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({data})
+        })
+        .then(response => console.log(response))
     }
 
     const Delete = (index) => {
